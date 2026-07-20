@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mitglied werden – Akademie 55plus Kassel</title>
+  <meta name="description" content="Werden Sie Mitglied der Akademie 55plus Kassel und nehmen Sie an Kursen, Ausflügen und Treffen teil.">
+
+  <!-- Google Font: Source Sans 3 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo">Akademie 55plus <span>Kassel</span></a>
+
+      <!-- Hauptnavigation -->
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+
+          <!-- Dropdown "Angebote" -->
+          <li class="has-dropdown">
+            <button class="dropdown-toggle" aria-expanded="false" aria-controls="angebote-menu">
+              Angebote
+              <svg class="chevron" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true">
+                <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <ul class="dropdown-menu" id="angebote-menu">
+              <li><a href="angebote-kurse-workshops.html">Kurse und Workshops</a></li>
+              <li><a href="angebote-kultur-reisen.html">Kultur und Reisen</a></li>
+              <li><a href="angebote-bewegung-freizeit.html">Bewegung und Freizeit</a></li>
+              <li><a href="angebote-austausch-gemeinschaft.html">Austausch und Gemeinschaft</a></li>
+            </ul>
+          </li>
+
+          <li><a href="veranstaltungskalender.html">Veranstaltungskalender</a></li>
+
+          <!-- Erscheint nur im aufgeklappten Mobilmenü (siehe style.css, Media Query 768px) -->
+          <li class="nav-cta-mobile">
+            <a href="mitglied-werden.html" class="btn btn-primary">Mitglied werden</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Call-to-Action-Button, immer sichtbar -->
+      <a href="mitglied-werden.html" class="btn btn-primary header-cta">Mitglied werden</a>
+
+      <!-- Mobil: Burger-Menü-Button (Funktion in script.js) -->
+      <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Beitritt</p>
+        <h1>Mitglied werden</h1>
+        <p>Werden Sie Teil der Akademie 55plus Kassel – füllen Sie einfach das Formular aus.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-intro">
+          <h2>Warum Mitglied werden?</h2>
+        </div>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-badge">01</div>
+            <div class="feature-body">
+              <h3>Gemeinschaft erleben</h3>
+              <p>Treffen Sie gleichgesinnte Menschen und bauen Sie neue Freundschaften auf.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-badge">02</div>
+            <div class="feature-body">
+              <h3>Volles Programm nutzen</h3>
+              <p>Nehmen Sie an allen Kursen, Ausflügen und Treffen teil – oder bieten Sie selbst etwas an.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--color-surface);">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">Formular</p>
+          <h2>Beitrittsformular</h2>
+          <p>
+            Hinweis für die Umsetzung: Dieses Formular ist aktuell ein optisches Muster. In WordPress wird
+            es sp&auml;ter mit einem Formular-Plugin verbunden, das die Anfragen per E-Mail an den Vorstand
+            sendet.
+          </p>
+        </div>
+
+        <form class="form-grid" action="#" method="post">
+          <div class="form-field">
+            <label for="vorname">Vorname</label>
+            <input type="text" id="vorname" name="vorname" required>
+          </div>
+          <div class="form-field">
+            <label for="nachname">Nachname</label>
+            <input type="text" id="nachname" name="nachname" required>
+          </div>
+          <div class="form-field">
+            <label for="email">E-Mail-Adresse</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-field">
+            <label for="telefon">Telefon (optional)</label>
+            <input type="tel" id="telefon" name="telefon">
+          </div>
+          <div class="form-field full-width">
+            <label for="interessen">Woran haben Sie besonderes Interesse?</label>
+            <textarea id="interessen" name="interessen" placeholder="z.B. Wandern, Literaturkreis, Fotografie..."></textarea>
+          </div>
+          <div class="form-field full-width">
+            <button type="submit" class="btn btn-primary">Anfrage senden</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+<footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <p class="logo logo-footer">Akademie 55plus <span>Kassel</span></p>
+        <p>Bleiben Sie informiert über neue Kurse und Veranstaltungen.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Über uns</h4>
+        <ul>
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="#angebote">Angebote</a></li>
+          <li><a href="mitglied-werden.html">Mitglied werden</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Folgen Sie uns</h4>
+        <ul class="social-list">
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 Akademie 55plus Kassel. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

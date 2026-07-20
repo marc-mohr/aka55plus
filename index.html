@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akademie 55plus Kassel – Aktiv leben ab 55, gemeinsam in Kassel</title>
+  <meta name="description" content="Die Akademie 55plus Kassel ist eine Gemeinschaft von Menschen ab 55 Jahren – von Älteren für Ältere. Kurse, Ausflüge, Bewegung und Austausch in Kassel.">
+
+  <!-- Google Font: Source Sans 3 – klare, sehr gut lesbare Groteskschrift, ideal für ältere Leser -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       HEADER / NAVIGATION
+       Dieser Block wandert später 1:1 in header.php (WordPress)
+  ========================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo">Akademie 55plus <span>Kassel</span></a>
+
+      <!-- Hauptnavigation -->
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+
+          <!-- Dropdown "Angebote" -->
+          <li class="has-dropdown">
+            <button class="dropdown-toggle" aria-expanded="false" aria-controls="angebote-menu">
+              Angebote
+              <svg class="chevron" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true">
+                <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <ul class="dropdown-menu" id="angebote-menu">
+              <li><a href="angebote-kurse-workshops.html">Kurse und Workshops</a></li>
+              <li><a href="angebote-kultur-reisen.html">Kultur und Reisen</a></li>
+              <li><a href="angebote-bewegung-freizeit.html">Bewegung und Freizeit</a></li>
+              <li><a href="angebote-austausch-gemeinschaft.html">Austausch und Gemeinschaft</a></li>
+            </ul>
+          </li>
+
+          <li><a href="veranstaltungskalender.html">Veranstaltungskalender</a></li>
+
+          <!-- Erscheint nur im aufgeklappten Mobilmenü (siehe style.css, Media Query 768px) -->
+          <li class="nav-cta-mobile">
+            <a href="mitglied-werden.html" class="btn btn-primary">Mitglied werden</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Call-to-Action-Button, immer sichtbar -->
+      <a href="mitglied-werden.html" class="btn btn-primary header-cta">Mitglied werden</a>
+
+      <!-- Mobil: Burger-Menü-Button (Funktion in script.js) -->
+      <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =========================================================
+         HERO-BEREICH
+    ========================================================== -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1>Aktiv leben ab 55 – gemeinsam in Kassel</h1>
+        <p class="hero-text">
+          Lernen, erleben und gestalten – von Älteren für Ältere. Entdecken Sie eine
+          Gemeinschaft, die Ihre Leidenschaft teilt und Ihre Ideen willkommen heißt.
+        </p>
+        <div class="button-group">
+          <a href="#angebote" class="btn btn-primary">Angebote entdecken</a>
+          <a href="mitglied-werden.html" class="btn btn-secondary">Mitmachen</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         "WER WIR SIND" — führt über "Mehr erfahren" zur Seite Über uns
+    ========================================================== -->
+    <section class="section wer-wir-sind">
+      <div class="container two-col">
+        <div class="text-col">
+          <p class="eyebrow">Wer wir sind</p>
+          <h2>Die Akademie 55plus Kassel</h2>
+          <p>
+            Wir sind eine Gemeinschaft von Menschen ab 55 Jahren, die ihr Leben aktiv und
+            sinnvoll gestalten möchten. Gemeinsam lernen wir, teilen Interessen und
+            schaffen neue Erfahrungen – immer nach unserem Motto: von Älteren für Ältere.
+          </p>
+          <a href="ueber-uns.html" class="btn btn-outline">Mehr erfahren</a>
+        </div>
+        <div class="image-col">
+          <!-- Platzhalter-Bild: später echtes Vereinsfoto einsetzen -->
+          <div class="image-placeholder">
+            <picture>
+              <source srcset="images/collage-mitglieder.webp" type="image/webp">
+              <img src="images/collage-mitglieder.jpg" alt="Collage aus Fotos von Vereinsmitgliedern der Akademie 55plus Kassel" loading="lazy">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         "WAS SIE ERWARTET" — Vorteile als durchgehend sichtbare
+         Feature-Liste (kein Akkordeon, kein Klick nötig).
+         Nummerierte Badge + Titel + Text, abwechselnd links/rechts
+         betont durch eine dünne Trennlinie zwischen den Punkten.
+    ========================================================== -->
+    <section class="section vorteile">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">Vorteile</p>
+          <h2>Was Sie erwartet</h2>
+          <p>Entdecken Sie die Vorteile einer Mitgliedschaft in unserer Akademie.</p>
+        </div>
+
+        <div class="vorteile-rows">
+
+          <div class="vorteile-row">
+            <div class="vorteile-text">
+              <p class="card-label">Gemeinschaft</p>
+              <h3>Gemeinschaft erleben</h3>
+              <p>Treffen Sie gleichgesinnte Menschen und bauen Sie neue Freundschaften auf.</p>
+            </div>
+            <div class="vorteile-image">
+              <div class="image-placeholder">
+                <picture>
+                  <source srcset="images/spaziergaenge.webp" type="image/webp">
+                  <img src="images/spaziergaenge.jpg" alt="Foto: Gemeinschaft erleben" loading="lazy">
+                </picture>
+              </div>
+            </div>
+          </div>
+
+          <div class="vorteile-row reverse">
+            <div class="vorteile-image">
+              <div class="image-placeholder">
+                <picture>
+                  <source srcset="images/fahrradgruppe-2.webp" type="image/webp">
+                  <img src="images/fahrradgruppe-2.jpg" alt="Foto: Aktiv bleiben" loading="lazy">
+                </picture>
+              </div>
+            </div>
+            <div class="vorteile-text">
+              <p class="card-label">Aktivität</p>
+              <h3>Aktiv bleiben</h3>
+              <p>
+                In unserem Verein können Sie gemeinsam mit Gleichgesinnten Ihr Englisch
+                und/oder Französisch auffrischen, fotografieren, aktuelle, klassische und
+                politische Literatur lesen, philosophieren, Doppelkopf spielen, wandern,
+                Rad fahren, kochen, Opern- und Theatervorstellungen besuchen, Filme
+                ansehen, Ausstellungen besuchen, an Stadtspaziergängen und Tagesausflügen
+                teilnehmen – oder selbst eine Aktivität anbieten.
+              </p>
+            </div>
+          </div>
+
+          <div class="vorteile-row">
+            <div class="vorteile-text">
+              <p class="card-label">Kreativität</p>
+              <h3>Eigene Ideen einbringen</h3>
+              <p>
+                Sie haben ein Hobby und möchten es mit anderen pflegen? Sie sprechen eine
+                Fremdsprache und möchten Ihre Kenntnisse durch Lehren weitergeben? Sie
+                debattieren gerne über aktuelle Themen? Sie haben Ideen für Ausflüge,
+                Reisen oder kulturelle Veranstaltungen? Sie möchten gemeinschaftlich
+                basteln, handarbeiten oder werkeln? Dann sind Sie bei uns richtig!
+              </p>
+            </div>
+            <div class="vorteile-image">
+              <div class="image-placeholder">
+                <picture>
+                  <source srcset="images/fotografin-tulpenfeld.webp" type="image/webp">
+                  <img src="images/fotografin-tulpenfeld.jpg" alt="Foto: Eigene Ideen einbringen" loading="lazy">
+                </picture>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         "UNSERE AKTIVITÄTEN" — jede Kachel verlinkt auf eine Unterseite
+    ========================================================== -->
+    <section class="section angebote" id="angebote">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">Angebote</p>
+          <h2>Unsere Aktivitäten</h2>
+          <p>Erkunden Sie die vielfältigen Möglichkeiten, die wir für Sie bereithalten.</p>
+        </div>
+
+        <div class="card-grid">
+          <a href="angebote-kurse-workshops.html" class="card">
+            <div class="card-body">
+              <p class="card-label">Kurse</p>
+              <h3>Kurse und Workshops</h3>
+              <p>Von Sprachen bis Fotografie – lernen Sie in kleinen Gruppen.</p>
+              <span class="card-link">Mehr →</span>
+            </div>
+            <div class="card-image-placeholder">
+              <picture>
+                <source srcset="images/card-kurse-workshops.webp" type="image/webp">
+                <img src="images/card-kurse-workshops.jpg" alt="Mitglieder bei einem Workshop in einer Kunstwerkstatt" loading="lazy">
+              </picture>
+            </div>
+          </a>
+
+          <a href="angebote-kultur-reisen.html" class="card">
+            <div class="card-body">
+              <p class="card-label">Angebote</p>
+              <h3>Kultur und Reisen</h3>
+              <p>Gemeinsame Ausflüge und kulturelle Erlebnisse in der Region.</p>
+              <span class="card-link">Mehr →</span>
+            </div>
+            <div class="card-image-placeholder">
+              <picture>
+                <source srcset="images/card-kultur-reisen.webp" type="image/webp">
+                <img src="images/card-kultur-reisen.jpg" alt="Mitglieder bei einem gemeinsamen Ausflug" loading="lazy">
+              </picture>
+            </div>
+          </a>
+
+          <a href="angebote-bewegung-freizeit.html" class="card">
+            <div class="card-body">
+              <p class="card-label">Angebote</p>
+              <h3>Bewegung und Freizeit</h3>
+              <p>Wanderungen, Spaziergänge und Fahrradtouren für alle Fitnessstufen.</p>
+              <span class="card-link">Mehr →</span>
+            </div>
+            <div class="card-image-placeholder">
+              <picture>
+                <source srcset="images/card-bewegung-freizeit.webp" type="image/webp">
+                <img src="images/card-bewegung-freizeit.jpg" alt="Fahrradgruppe der Akademie 55plus Kassel" loading="lazy">
+              </picture>
+            </div>
+          </a>
+
+          <a href="angebote-austausch-gemeinschaft.html" class="card">
+            <div class="card-body">
+              <p class="card-label">Angebote</p>
+              <h3>Austausch und Gemeinschaft</h3>
+              <p>Regelmäßige Treffen zum Gedankenaustausch und geselligen Beisammensein.</p>
+              <span class="card-link">Mehr →</span>
+            </div>
+            <div class="card-image-placeholder">
+              <picture>
+                <source srcset="images/card-austausch-gemeinschaft.webp" type="image/webp">
+                <img src="images/card-austausch-gemeinschaft.jpg" alt="Mitglieder beim geselligen Austausch" loading="lazy">
+              </picture>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         "ABLAUF" — Drei einfache Schritte
+    ========================================================== -->
+    <section class="section ablauf">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">Ablauf</p>
+          <h2>Drei einfache Schritte</h2>
+          <p>So werden Sie Teil unserer Akademie</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step">
+            <p class="step-label">Erster Kontakt</p>
+            <h3>Kennenlernen</h3>
+            <p>
+              Besuchen Sie unverbindlich einen Stammtisch oder schnuppern Sie in einen
+              Kurs hinein. Lernen Sie uns und unsere Gemeinschaft ganz ohne Verpflichtung
+              kennen.
+            </p>
+          </div>
+
+          <div class="step">
+            <p class="step-label">Beitritt</p>
+            <h3>Mitglied werden</h3>
+            <p>
+              Gefällt Ihnen, was Sie sehen? Füllen Sie das Beitrittsformular aus und
+              werden Sie Teil der Akademie 55plus Kassel.
+            </p>
+          </div>
+
+          <div class="step">
+            <p class="step-label">Mitmachen</p>
+            <h3>Kurse besuchen oder anbieten</h3>
+            <p>
+              Wählen Sie aus unserem vielfältigen Programm oder bringen Sie eigene Ideen
+              ein – als Teilnehmer oder Kursleiter.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         TESTIMONIALS — "Aus unserer Gemeinschaft"
+    ========================================================== -->
+    <section class="section testimonials">
+      <div class="container">
+        <div class="section-intro">
+          <h2>Aus unserer Gemeinschaft</h2>
+          <p>Hören Sie, was unsere Mitglieder sagen</p>
+        </div>
+
+        <div class="card-grid three-col">
+          <blockquote class="testimonial">
+            <p class="stars" aria-hidden="true">★★★★★</p>
+            <p>
+              „Hier habe ich endlich Menschen gefunden, die meine Leidenschaft für
+              Geschichte teilen. Die Diskussionen sind lebendig und ich lerne ständig dazu.“
+            </p>
+            <footer><strong>Klaus Müller</strong> · Mitglied seit drei Jahren</footer>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <p class="stars" aria-hidden="true">★★★★★</p>
+            <p>
+              „Die Wandergruppe hat mir neue Kraft gegeben. Ich bin wieder aktiv und habe
+              wunderbare Freunde gefunden, mit denen ich die Natur genießen kann.“
+            </p>
+            <footer><strong>Petra Schmidt</strong> · Aktiv in Bewegung und Freizeit</footer>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <p class="stars" aria-hidden="true">★★★★★</p>
+            <p>
+              „Mein Keramikkurs ist das Beste, was mir passiert ist. Ich kann meine
+              Kreativität ausleben und gleichzeitig mit anderen Künstlern arbeiten.“
+            </p>
+            <footer><strong>Ingrid Weber</strong> · Kursleiterin und Mitglied</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         ABSCHLIESSENDER CALL-TO-ACTION
+    ========================================================== -->
+    <section class="section cta-band">
+      <div class="container cta-inner">
+        <h2>Kommen Sie vorbei und erleben Sie uns</h2>
+        <p>
+          Besuchen Sie unseren nächsten Stammtisch oder schnuppern Sie in einem Kurs
+          rein. Wir freuen uns auf Sie.
+        </p>
+        <div class="button-group">
+          <a href="angebote-kurse-workshops.html" class="btn btn-primary">Reinschnuppern</a>
+          <a href="angebote-austausch-gemeinschaft.html" class="btn btn-outline-light">Stammtisch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Großes, mittiges Bild — hier passt später ein stimmungsvolles
+         Gruppenfoto von Mitgliedern bei einer Aktivität gut -->
+    <section class="section">
+      <div class="container">
+        <div class="image-placeholder-large">
+          <picture>
+            <source srcset="images/wandergruppe-gross.webp" type="image/webp">
+            <img src="images/wandergruppe-gross.jpg" alt="Mitglieder der Akademie 55plus Kassel bei einem gemeinsamen Ausflug" loading="lazy">
+          </picture>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+       Dieser Block wandert später 1:1 in footer.php (WordPress)
+  ========================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <p class="logo logo-footer">Akademie 55plus <span>Kassel</span></p>
+        <p>Bleiben Sie informiert über neue Kurse und Veranstaltungen.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Über uns</h4>
+        <ul>
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="#angebote">Angebote</a></li>
+          <li><a href="mitglied-werden.html">Mitglied werden</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Folgen Sie uns</h4>
+        <ul class="social-list">
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 Akademie 55plus Kassel. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

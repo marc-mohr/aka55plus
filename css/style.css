@@ -1,0 +1,796 @@
+/* ==========================================================
+   DESIGN TOKENS
+   Alle Farben, Schriften und Abstände zentral als CSS-Variablen.
+   Ändere hier EINEN Wert, um ihn überall auf der Seite anzupassen.
+========================================================== */
+:root {
+  /* Farbpalette "Kasseler Blau" (Option B) */
+  --color-primary: #3E5C6E;      /* Taubenblau – Header, Überschriften, Buttons */
+  --color-primary-dark: #2E4655; /* dunklere Variante für Hover-Zustände */
+  --color-bg: #F2EFEA;           /* warmes Hellgrau-Beige – Seitenhintergrund */
+  --color-surface: #FFFFFF;      /* Weiß – Karten und Content-Flächen */
+  --color-accent: #f26419;       /* Orange – Call-to-Action-Buttons */
+  --color-accent-dark: #c94f0f;  /* dunklere Variante für Hover */
+  --color-text: #2B2B2B;         /* Anthrazit – Fließtext */
+  --color-text-muted: #5B6469;   /* für sekundären Text */
+  --color-border: #DDD7CC;
+
+  /* Typografie */
+  --font-base: 'Source Sans 3', system-ui, sans-serif;
+  --font-size-base: 18px;        /* bewusst größer als Standard-16px, gut lesbar für 55+ */
+  --line-height-base: 1.65;
+
+  /* Abstände */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+
+  /* Sonstiges */
+  --radius: 12px;
+  --max-width: 1180px;
+  --transition: 0.2s ease;
+}
+
+/* ==========================================================
+   RESET & GRUNDEINSTELLUNGEN
+========================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-base);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 var(--space-sm);
+  color: var(--color-primary-dark);
+}
+
+h1 { font-size: clamp(2rem, 4vw, 3.2rem); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
+h3 { font-size: 1.3rem; }
+
+p { margin: 0 0 var(--space-sm); }
+
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { color: var(--color-accent); }
+
+img { max-width: 100%; display: block; }
+
+/* Sichtbarer Tastatur-Fokus für Barrierefreiheit */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.section { padding: var(--space-xl) 0; }
+
+.section-intro {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--space-lg);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  margin-bottom: var(--space-xs);
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  border: 2px solid transparent;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-surface);
+}
+.btn-primary:hover { background: var(--color-accent-dark); color: var(--color-surface); }
+
+.btn-secondary {
+  background: var(--color-primary);
+  color: var(--color-surface);
+  border-color: var(--color-accent);
+}
+.btn-secondary:hover { background: var(--color-primary-dark); color: var(--color-surface); border-color: var(--color-accent); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.btn-outline:hover {
+  background: var(--color-primary);
+  color: var(--color-surface);
+}
+
+.btn-outline-light {
+  background: transparent;
+  color: var(--color-surface);
+  border-color: var(--color-surface);
+}
+.btn-outline-light:hover {
+  background: var(--color-surface);
+  color: var(--color-primary-dark);
+}
+
+.button-group {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+/* ==========================================================
+   HEADER / NAVIGATION
+========================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
+  gap: var(--space-md);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--color-primary-dark);
+  white-space: nowrap;
+}
+.logo span { color: var(--color-accent); }
+
+.main-nav ul {
+  display: flex;
+  gap: var(--space-md);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a,
+.dropdown-toggle {
+  font-weight: 600;
+  color: var(--color-text);
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+.main-nav a:hover,
+.dropdown-toggle:hover { color: var(--color-accent); }
+
+/* Dropdown "Angebote" */
+.has-dropdown { position: relative; }
+
+.main-nav .dropdown-menu {
+  list-style: none;
+  margin: 0;
+  padding: var(--space-xs) 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+
+  /* Wichtig: Selector ist bewusst ".main-nav .dropdown-menu" (2 Klassen),
+     damit er spezifischer ist als ".main-nav ul" oben und dessen
+     "display: flex" sicher überschreibt. Nur mit ".dropdown-menu" allein
+     hätte ".main-nav ul" gewonnen und das Menü wäre immer offen geblieben. */
+  display: none;
+}
+
+.main-nav .dropdown-menu.open { display: block; }
+
+.dropdown-menu li a {
+  display: block;
+  padding: 0.6rem 1rem;
+}
+.dropdown-menu li a:hover { background: var(--color-bg); }
+
+.chevron { transition: transform var(--transition); }
+.dropdown-toggle[aria-expanded="true"] .chevron { transform: rotate(180deg); }
+
+.header-cta { flex-shrink: 0; }
+.nav-cta-mobile { display: none; } /* nur im Mobilmenü sichtbar, siehe Media Query 768px */
+
+/* Mobiler Menü-Button (Burger-Icon) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.nav-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--color-primary-dark);
+}
+
+/* ==========================================================
+   HERO
+========================================================== */
+.hero {
+  /* Foto + halbtransparenter, dunkler Farbverlauf darüber – damit die
+     weiße Schrift auf jedem Hintergrundfoto gut lesbar bleibt. Farbe
+     nutzt bewusst --color-primary-dark, passend zur restlichen Palette. */
+  background:
+    linear-gradient(rgba(46, 70, 85, 0.72), rgba(46, 70, 85, 0.72)),
+    url("../images/hero-bg.jpg") center / cover no-repeat;
+  /* "fixed" hält das Bild an Ort und Stelle, während der Inhalt darüber
+     wegscrollt — der klassische Parallax-Effekt: die Schrift scrollt
+     nach oben weg, das Bild bleibt sichtbar stehen. */
+  background-attachment: fixed;
+  color: var(--color-surface);
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.hero h1 { color: var(--color-surface); }
+.hero-text {
+  max-width: 640px;
+  margin: 0 auto var(--space-md);
+  font-size: 1.15rem;
+}
+.hero-inner { display: flex; flex-direction: column; align-items: center; }
+.hero .button-group { justify-content: center; }
+
+/* ==========================================================
+   ZWEISPALTIGE BEREICHE ("Wer wir sind")
+========================================================== */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.image-placeholder {
+  background: var(--color-border);
+  border-radius: var(--radius);
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  overflow: hidden;
+}
+.image-placeholder img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ==========================================================
+   FEATURE-LISTE ("Was Sie erwartet")
+   Alle vier Punkte sind dauerhaft sichtbar (kein Klick nötig) –
+   nummerierte Badge links, Titel + Text rechts. Eine dünne
+   Trennlinie zwischen den Punkten schafft Struktur, auch wenn
+   die Texte unterschiedlich lang sind.
+========================================================== */
+.feature-list {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.feature-item {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.feature-item:first-child { border-top: 1px solid var(--color-border); }
+
+.feature-badge {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.feature-body h3 { margin-bottom: 0.4rem; }
+.feature-body p { color: var(--color-text-muted); margin-bottom: 0; }
+
+/* Jeder zweite Punkt bekommt die Akzentfarbe als Badge –
+   sorgt für optischen Rhythmus in der langen Liste */
+.feature-item:nth-child(even) .feature-badge {
+  background: var(--color-accent);
+}
+
+/* ==========================================================
+   KARTEN-RASTER ("Unsere Aktivitäten" / Testimonials)
+========================================================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+}
+.card-grid.three-col { grid-template-columns: repeat(3, 1fr); }
+
+.card {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition);
+  border: 1px solid var(--color-border);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  color: var(--color-text);
+}
+
+.card-body { padding: var(--space-md); display: flex; flex-direction: column; gap: 0.4rem; flex: 1; }
+
+.card-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.2rem;
+}
+
+.card h3 { color: var(--color-primary-dark); font-size: 1.4rem; margin-bottom: 0.2rem; }
+.card p { color: var(--color-text-muted); }
+
+.card-link {
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-top: auto;
+}
+.card:hover .card-link { color: var(--color-accent-dark); }
+
+/* Bildplatzhalter am unteren Rand jeder Karte – hier setzt der Verein
+   später ein echtes Foto der jeweiligen Aktivität ein */
+.card-image-placeholder {
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-image-placeholder svg { width: 40px; height: 40px; color: var(--color-text-muted); opacity: 0.5; }
+.card-image-placeholder img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Großer, mittiger Bildplatzhalter (z.B. unter dem CTA-Band) */
+.image-placeholder-large {
+  background: var(--color-border);
+  border-radius: var(--radius);
+  aspect-ratio: 21 / 9;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-placeholder-large svg { width: 56px; height: 56px; color: var(--color-text-muted); opacity: 0.5; }
+.image-placeholder-large img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: var(--radius); }
+
+/* ==========================================================
+   "ABLAUF" — Drei-Schritte-Raster
+========================================================== */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.step {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+}
+
+.step-label {
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ==========================================================
+   TESTIMONIALS
+========================================================== */
+.testimonial {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  margin: 0;
+}
+.testimonial .stars { color: var(--color-accent); letter-spacing: 2px; }
+.testimonial footer { margin-top: var(--space-sm); color: var(--color-text-muted); font-size: 0.9rem; }
+
+/* ==========================================================
+   ABSCHLUSS-CTA-BAND
+========================================================== */
+.cta-band {
+  background: var(--color-accent);
+  color: var(--color-surface);
+  text-align: center;
+}
+.cta-band h2 { color: var(--color-surface); }
+
+/* Beide Buttons im CTA-Band einheitlich und mit klarem Kontrast zum
+   orangen Hintergrund darstellen (statt eines orangen Buttons auf
+   orangem Grund, das kaum zu erkennen war) */
+.cta-band .btn-primary,
+.cta-band .btn-outline-light {
+  background: var(--color-surface);
+  color: var(--color-accent-dark);
+  border-color: var(--color-surface);
+}
+.cta-band .btn-primary:hover,
+.cta-band .btn-outline-light:hover {
+  background: var(--color-primary-dark);
+  color: var(--color-surface);
+  border-color: var(--color-primary-dark);
+}
+.cta-inner { max-width: 640px; margin: 0 auto; }
+.cta-inner .button-group { justify-content: center; }
+
+/* ==========================================================
+   NEWSLETTER
+========================================================== */
+.newsletter { padding: var(--space-lg) 0; text-align: center; }
+.newsletter-inner { max-width: 520px; margin: 0 auto; }
+.newsletter-form {
+  display: flex;
+  gap: var(--space-xs);
+  margin: var(--space-sm) 0;
+}
+.newsletter-form input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 1rem;
+}
+.fine-print { font-size: 0.85rem; color: var(--color-text-muted); }
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+.site-footer {
+  background: var(--color-primary-dark);
+  color: rgba(255,255,255,0.85);
+  padding-top: var(--space-lg);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--space-md);
+  padding-bottom: var(--space-lg);
+}
+
+.footer-brand .logo-footer { color: var(--color-surface); margin-bottom: var(--space-xs); }
+
+.footer-col h4 {
+  color: var(--color-surface);
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.footer-col ul { list-style: none; margin: 0; padding: 0; }
+.footer-col li { margin-bottom: 0.5rem; }
+.footer-col a { color: rgba(255,255,255,0.85); }
+.footer-col a:hover { color: var(--color-surface); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding: var(--space-sm) 0;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* ==========================================================
+   VORTEILE — Zickzack-Layout (Text/Bild abwechselnd)
+   Jeder Punkt ist eine eigene Zeile statt einer Karten-Reihe mit
+   erzwungen gleicher Höhe — so entsteht kein Leerraum mehr bei
+   unterschiedlich langen Texten.
+========================================================== */
+.vorteile-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+  margin-bottom: var(--space-lg);
+}
+.vorteile-row:last-child { margin-bottom: 0; }
+
+/* reverse = Bild links, Text rechts */
+.vorteile-row.reverse .vorteile-image { order: 1; }
+.vorteile-row.reverse .vorteile-text { order: 2; }
+
+/* Bilder bewusst kleiner als die volle Spaltenbreite, wirkt dezenter */
+.vorteile-image .image-placeholder { max-width: 320px; margin: 0 auto; }
+
+/* Scroll-Reveal: Start-Zustand (unsichtbar, seitlich versetzt) */
+.vorteile-row {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.vorteile-row.reverse { transform: translateX(40px); }
+.vorteile-row.in-view { opacity: 1; transform: translateX(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .vorteile-row { opacity: 1; transform: none; transition: none; }
+}
+
+/* ==========================================================
+   UNTERSEITEN-KOMPONENTEN
+   Diese Klassen werden auf allen Unterseiten (Über uns, die 4
+   Angebote-Seiten, Veranstaltungskalender, Mitglied werden)
+   verwendet, damit sie optisch zur Startseite passen.
+========================================================== */
+
+/* Kleiner Seiten-Header statt des großen Hero-Bereichs der Startseite */
+.page-hero {
+  background: var(--color-primary);
+  color: var(--color-surface);
+  padding: var(--space-lg) 0;
+  text-align: center;
+}
+.page-hero h1 { color: var(--color-surface); margin-bottom: var(--space-xs); }
+.page-hero p { color: rgba(255,255,255,0.85); max-width: 640px; margin: 0 auto; }
+.page-hero .eyebrow { color: #FFD9C2; } /* helleres Orange, gut lesbar auf dem blauen Hintergrund */
+
+/* Fließtext-Container für einfache Textseiten (z.B. Über uns) */
+.prose { max-width: 760px; margin: 0 auto; }
+.prose p { color: var(--color-text-muted); }
+
+/* Schmalere Variante: gleiche Breite wie eine Spalte in .two-col,
+   damit z.B. "An wen wenden wir uns?" optisch zur "Über Aka 55"-Spalte passt */
+.prose-narrow {
+  max-width: calc((var(--max-width) - 2 * var(--space-md) - var(--space-lg)) / 2);
+  margin: 0 auto;
+}
+.prose-narrow p { color: var(--color-text-muted); }
+
+/* Zwei gleich breite Text-Spalten nebeneinander (z.B. "An wen wenden
+   wir uns?" + "Von Älteren für Ältere" auf der Über-uns-Seite) */
+.prose-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+.prose-two-col p { color: var(--color-text-muted); }
+
+/* Liste von Aktivitäten/Kursen mit Titel, Meta-Infos (Zeit/Kontakt) und Beschreibung.
+   Bewusst dieselbe "immer sichtbar, kein Klick nötig"-Logik wie bei den Vorteilen. */
+.activity-list { max-width: 820px; margin: 0 auto; }
+
+.activity-entry {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border);
+  align-items: flex-start;
+}
+.activity-entry:first-child { border-top: 1px solid var(--color-border); }
+.activity-entry-content { flex: 1; min-width: 0; }
+
+/* Bild-Miniatur pro Kurs/Aktivität – nicht jeder Kurs hat schon ein Foto,
+   daher ist dieser Block optional (Klasse "has-image" auf dem Eltern-Element) */
+.activity-entry-image {
+  width: 160px;
+  flex-shrink: 0;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.activity-entry-image img { width: 100%; height: 100%; object-fit: cover; }
+.activity-entry-image svg { width: 28px; height: 28px; color: var(--color-text-muted); opacity: 0.5; }
+
+.activity-entry h3 { margin-bottom: 0.4rem; }
+
+.activity-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--color-accent-dark);
+  font-weight: 600;
+}
+.activity-meta span { display: inline-flex; align-items: center; gap: 0.3rem; }
+.activity-meta svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+.activity-entry p { color: var(--color-text-muted); margin-bottom: 0; }
+.activity-entry .contact { color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.4rem; }
+
+/* Formulare (Mitglied werden, Veranstaltungskalender-Filter etc.) */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm) var(--space-md);
+  max-width: 720px;
+  margin: 0 auto;
+}
+.form-grid .full-width { grid-column: 1 / -1; }
+
+.form-field { display: flex; flex-direction: column; gap: 0.4rem; text-align: left; }
+.form-field label { font-weight: 600; font-size: 0.95rem; }
+.form-field input,
+.form-field select,
+.form-field textarea {
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 1rem;
+  background: var(--color-surface);
+}
+.form-field textarea { resize: vertical; min-height: 120px; }
+
+/* Platzhalter-Hinweisbox, z.B. auf der Veranstaltungskalender-Seite */
+.notice-box {
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  max-width: 720px;
+  margin: 0 auto var(--space-lg);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+/* Einfache Beispiel-Tabelle für den Kalender-Platzhalter */
+.event-table { width: 100%; border-collapse: collapse; max-width: 820px; margin: 0 auto; }
+.event-table th, .event-table td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.event-table th { color: var(--color-primary-dark); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* ==========================================================
+   RESPONSIVE BREAKPOINTS
+   Reihenfolge: große Monitore → Tablet quer → Tablet hoch/
+   großes Smartphone → kleines Smartphone
+========================================================== */
+
+/* Große Monitore (21 Zoll+, ca. 1920px Breite): etwas mehr Luft
+   und eine minimal größere Basis-Schrift, damit der Inhalt nicht
+   "verloren" in der Bildschirmmitte wirkt */
+@media (min-width: 1600px) {
+  :root {
+    --max-width: 1360px;
+    --font-size-base: 19px;
+  }
+}
+
+/* Tablet quer / kleine Desktops */
+@media (max-width: 960px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Tablet hoch / großes Smartphone: Navigation wird zum Mobilmenü */
+@media (max-width: 768px) {
+  .two-col { grid-template-columns: 1fr; }
+  .prose-narrow { max-width: 100%; }
+  .prose-two-col { grid-template-columns: 1fr; }
+  .card-grid,
+  .card-grid.three-col { grid-template-columns: 1fr; }
+  .feature-item { grid-template-columns: 56px 1fr; gap: var(--space-sm); }
+  .form-grid { grid-template-columns: 1fr; }
+  .activity-entry { flex-direction: column; }
+  .activity-entry-image { width: 100%; }
+  .vorteile-row { grid-template-columns: 1fr !important; }
+
+  /* "fixed" ist auf Mobilgeräten unzuverlässig/ruckelig -> normales Scrollen */
+  .hero { background-attachment: scroll; min-height: 60vh; }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-sm);
+  }
+  .main-nav.open { display: block; }
+  .main-nav ul { flex-direction: column; align-items: stretch; gap: 0; }
+  .main-nav .dropdown-menu { position: static; box-shadow: none; border: none; padding-left: var(--space-sm); }
+
+  .nav-toggle { display: flex; }
+  .header-cta { display: none; }
+  .nav-cta-mobile { display: block; margin-top: var(--space-sm); text-align: center; }
+
+  .footer-grid { grid-template-columns: 1fr; }
+}
+
+/* Kleines Smartphone (z.B. iPhone SE, ca. 375px und schmaler) */
+@media (max-width: 480px) {
+  :root {
+    --space-lg: 2.5rem;
+    --space-xl: 3.5rem;
+  }
+  .container { padding: 0 var(--space-sm); }
+  .button-group { flex-direction: column; align-items: stretch; }
+  .button-group .btn { text-align: center; }
+  .newsletter-form { flex-direction: column; }
+  .logo { font-size: 1rem; }
+  .feature-item { grid-template-columns: 1fr; text-align: left; }
+  .feature-badge { margin-bottom: var(--space-xs); }
+}

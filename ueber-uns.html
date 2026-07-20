@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Über uns – Akademie 55plus Kassel</title>
+  <meta name="description" content="Die Akademie 55plus Kassel: eine gemeinnützige Bildungseinrichtung von Älteren für Ältere in Kassel.">
+
+  <!-- Google Font: Source Sans 3 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo">Akademie 55plus <span>Kassel</span></a>
+
+      <!-- Hauptnavigation -->
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+
+          <!-- Dropdown "Angebote" -->
+          <li class="has-dropdown">
+            <button class="dropdown-toggle" aria-expanded="false" aria-controls="angebote-menu">
+              Angebote
+              <svg class="chevron" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true">
+                <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <ul class="dropdown-menu" id="angebote-menu">
+              <li><a href="angebote-kurse-workshops.html">Kurse und Workshops</a></li>
+              <li><a href="angebote-kultur-reisen.html">Kultur und Reisen</a></li>
+              <li><a href="angebote-bewegung-freizeit.html">Bewegung und Freizeit</a></li>
+              <li><a href="angebote-austausch-gemeinschaft.html">Austausch und Gemeinschaft</a></li>
+            </ul>
+          </li>
+
+          <li><a href="veranstaltungskalender.html">Veranstaltungskalender</a></li>
+
+          <!-- Erscheint nur im aufgeklappten Mobilmenü (siehe style.css, Media Query 768px) -->
+          <li class="nav-cta-mobile">
+            <a href="mitglied-werden.html" class="btn btn-primary">Mitglied werden</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Call-to-Action-Button, immer sichtbar -->
+      <a href="mitglied-werden.html" class="btn btn-primary header-cta">Mitglied werden</a>
+
+      <!-- Mobil: Burger-Menü-Button (Funktion in script.js) -->
+      <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Über uns</p>
+        <h1>Von Älteren für Ältere</h1>
+        <p>Wer wir sind, wofür wir stehen und wer hinter der Akademie 55plus Kassel steht.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container two-col">
+        <div class="text-col">
+          <p class="eyebrow">Über Aka 55</p>
+          <h2>Eine gemeinnützige Bildungseinrichtung</h2>
+          <p>
+            Die Akademie 55plus Kassel ist eine gemeinnützige Bildungseinrichtung für Menschen ab
+            dem 55. Lebensjahr. Unser Motto lautet „von Älteren für Ältere“.
+          </p>
+        </div>
+        <div class="image-col">
+          <div class="image-placeholder">
+            <picture>
+              <source srcset="images/card-kultur-reisen.webp" type="image/webp">
+              <img src="images/card-kultur-reisen.jpg" alt="Mitglieder der Akademie 55plus Kassel bei einem gemeinsamen Ausflug" loading="lazy">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--color-surface);">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">Unsere Ziele</p>
+          <h2>Worum geht es uns?</h2>
+          <p>Wir wollen …</p>
+        </div>
+
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-badge">01</div>
+            <div class="feature-body">
+              <p>durch gemeinsames, aktives Tun die körperlichen und geistigen Kräfte auch im
+              zunehmenden Alter erhalten und fördern</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-badge">02</div>
+            <div class="feature-body">
+              <p>aus eigener Kraft und eigenständig Ideen und Projekte selbstbestimmt verwirklichen</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-badge">03</div>
+            <div class="feature-body">
+              <p>unsere Hobbys mit anderen Interessierten teilen und vertiefen</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-badge">04</div>
+            <div class="feature-body">
+              <p>unsere Selbsterkenntnis verbessern und die kreativen Kräfte in uns zur Entfaltung bringen</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-badge">05</div>
+            <div class="feature-body">
+              <p>Gemeinschaft erleben durch Feiern und Veranstaltungen, Spielen, Wandern und
+              Kulturreisen, gemeinsam literarische oder philosophische Texte lesen und diskutieren
+              und vieles mehr</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="prose-two-col">
+          <div>
+            <h2>An wen wenden wir uns?</h2>
+            <p>
+              An ältere Menschen, die künftig oder bereits nicht mehr berufstätig sind, die aber aktiv
+              und kommunikationsfreudig ihren dritten Lebensabschnitt gestalten wollen. Im Alter
+              entfalten! Ausgerichtet an den Interessen und Ideen der Mitglieder entwickeln wir
+              gemeinsam ein wechselndes Quartalsprogramm.
+            </p>
+            <p>
+              Unser ehrenamtliches Engagement soll dazu beitragen, in Kassel ein neues
+              Altersbewusstsein durch selbst organisierte Bildungsarbeit zu schaffen – ein Bewusstsein,
+              das dem Älterwerden einen neuen Wert und Erfahrungen mit schöpferischem Inhalt zu geben
+              vermag.
+            </p>
+            <h2>Von Älteren für Ältere</h2>
+            <p>
+              Das Motto der Akademie lautet „Von Älteren für Ältere“. Das bedeutet: Menschen ab
+              Lebensalter 55 geben oder besuchen Kurse, die für ihre Interessen und Altersstufe
+              maßgeschneidert sind. Wer Mitglied ist, darf jederzeit mit einem Kursangebot oder
+              Ähnlichem die Vielfalt der Akademie bereichern. Die Themen, Inhalte, Dauer und Häufigkeit
+              der gewählten Kurse bestimmen die Teilnehmenden in Absprache mit der Kursleitung nach
+              Möglichkeit weitgehend selbst.
+            </p>
+          </div>
+          <div>
+            <p>
+              Hierfür ist keine akademische oder vergleichbare Vorbildung erforderlich. Es gibt keine
+              Prüfungen und es gibt auch keine Zeugnisse. Der gewählte Stoff wird in entspannter
+              Atmosphäre, selbstbestimmt und in angepasstem Tempo erarbeitet. Die Themenfelder
+              profitieren von der Lebens- und Berufserfahrung, von Hobbys und den vielfältigen
+              Interessen aller Mitglieder.
+            </p>
+            <p>
+              Unsere Angebote bieten vielerlei Möglichkeiten, Neues kennenzulernen, altes Wissen
+              aufzufrischen, mit anderen zu kommunizieren, gemeinsam etwas zu unternehmen und immer
+              wieder neue nette Menschen kennenzulernen. So, wie jedes Mitglied Angebote anregen darf
+              (und sollte), kann auch jedes an einer Auswahl der anderen Kurse teilnehmen. Alles, was
+              getan wird, wird ehrenamtlich getan.
+            </p>
+            <p>
+              In unserer Akademie sind alle Interessierten, die ihren „dritten Lebensabschnitt“ mit
+              sinnvoller Aktivität gestalten möchten und darauf brennen, sich neu zu entfalten, gut
+              aufgehoben und zum Mitmachen aufgerufen! Außer fortlaufenden Kursen bieten wir auch
+              Einzelveranstaltungen an, kleine Highlights wie Vorträge, Kulturreisen und mehr.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-band">
+      <div class="container cta-inner">
+        <h2>Sie sind neugierig geworden?</h2>
+        <p>
+          Schnuppern Sie doch einfach mal – durch Besuch eines der angebotenen Kurse/Aktivitäten
+          oder kommen Sie zu unserem Stammtisch. Natürlich dürfen Sie auch gleich selbst ein neues
+          Thema anbieten oder anregen!
+        </p>
+        <div class="button-group">
+          <a href="mitglied-werden.html" class="btn btn-primary">Mitglied werden</a>
+          <a href="angebote-austausch-gemeinschaft.html" class="btn btn-outline-light">Zum Stammtisch</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+<footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <p class="logo logo-footer">Akademie 55plus <span>Kassel</span></p>
+        <p>Bleiben Sie informiert über neue Kurse und Veranstaltungen.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Über uns</h4>
+        <ul>
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="#angebote">Angebote</a></li>
+          <li><a href="mitglied-werden.html">Mitglied werden</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Folgen Sie uns</h4>
+        <ul class="social-list">
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 Akademie 55plus Kassel. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
