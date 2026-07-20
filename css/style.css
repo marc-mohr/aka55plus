@@ -339,8 +339,9 @@ summary:focus-visible {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: var(--color-primary);
-  color: var(--color-surface);
+  border:solid 2px var(--color-primary);
+  background: white;
+  color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -352,11 +353,6 @@ summary:focus-visible {
 .feature-body h3 { margin-bottom: 0.4rem; }
 .feature-body p { color: var(--color-text-muted); margin-bottom: 0; }
 
-/* Jeder zweite Punkt bekommt die Akzentfarbe als Badge –
-   sorgt für optischen Rhythmus in der langen Liste */
-.feature-item:nth-child(even) .feature-badge {
-  background: var(--color-accent);
-}
 
 /* ==========================================================
    KARTEN-RASTER ("Unsere Aktivitäten" / Testimonials)
