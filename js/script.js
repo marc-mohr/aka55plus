@@ -20,31 +20,46 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* ---------- 2) "Angebote"-Dropdown ---------- */
-  const dropdownToggle = document.querySelector('.dropdown-toggle');
-  const dropdownMenu = document.querySelector('.dropdown-menu');
+  /* ---------- 2) "Angebote"-Dropdowns (Header UND Footer) ----------
+     Es kann mehrere Dropdowns auf einer Seite geben (Header + Footer),
+     deshalb alle einsammeln statt nur das erste. */
+  const dropdownPairs = [];
+  document.querySelectorAll('.has-dropdown').forEach(function (wrapper) {
+    const toggle = wrapper.querySelector('.dropdown-toggle');
+    const menu = wrapper.querySelector('.dropdown-menu');
+    if (toggle && menu) {
+      dropdownPairs.push({ toggle: toggle, menu: menu });
 
-  if (dropdownToggle && dropdownMenu) {
+      toggle.addEventListener('click', function (event) {
+        event.stopPropagation(); // verhindert, dass der globale Klick-Listener sofort wieder schließt
+        const isOpen = menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen);
+      });
+    }
+  });
 
-    dropdownToggle.addEventListener('click', function (event) {
-      event.stopPropagation(); // verhindert, dass der globale Klick-Listener sofort wieder schließt
-      const isOpen = dropdownMenu.classList.toggle('open');
-      dropdownToggle.setAttribute('aria-expanded', isOpen);
+  function closeAllDropdowns() {
+    dropdownPairs.forEach(function (pair) {
+      pair.menu.classList.remove('open');
+      pair.toggle.setAttribute('aria-expanded', 'false');
     });
+  }
 
-    // Klick außerhalb des Dropdowns schließt es wieder
+  if (dropdownPairs.length) {
+    // Klick außerhalb eines Dropdowns schließt nur dieses wieder
     document.addEventListener('click', function (event) {
-      if (!dropdownMenu.contains(event.target) && !dropdownToggle.contains(event.target)) {
-        dropdownMenu.classList.remove('open');
-        dropdownToggle.setAttribute('aria-expanded', 'false');
-      }
+      dropdownPairs.forEach(function (pair) {
+        if (!pair.menu.contains(event.target) && !pair.toggle.contains(event.target)) {
+          pair.menu.classList.remove('open');
+          pair.toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
     });
 
-    // Escape-Taste schließt das Dropdown (Barrierefreiheit)
+    // Escape-Taste schließt alle Dropdowns (Barrierefreiheit)
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape') {
-        dropdownMenu.classList.remove('open');
-        dropdownToggle.setAttribute('aria-expanded', 'false');
+        closeAllDropdowns();
       }
     });
   }

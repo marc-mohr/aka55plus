@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Über uns – Akademie 55plus Kassel</title>
-  <meta name="description" content="Die Akademie 55plus Kassel: eine gemeinnützige Einrichtung von Menschen für Menschen ab 55 in und um Kassel.">
+  <meta name="description" content="Die Akademie 55plus Kassel: eine Gemeinschaft für Menschen ab 55 – gemeinsam aktiv und kreativ, in und um Kassel.">
 
   <!-- Google Font: Source Sans 3 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +18,12 @@
 <header class="site-header">
     <div class="container header-inner">
 
-      <a href="index.html" class="logo">Akademie 55plus <span>Kassel</span></a>
+      <div class="header-brand">
+        <a href="index.html" class="logo">Akademie 55plus <span>Kassel</span></a>
+        <div class="logo-placeholder" role="img" aria-label="Platzhalter für Vereinslogo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        </div>
+      </div>
 
       <!-- Hauptnavigation -->
       <nav class="main-nav" aria-label="Hauptnavigation">
@@ -65,7 +70,7 @@
     <section class="page-hero">
       <div class="container">
         <p class="eyebrow">Über uns</p>
-        <h1>Von Menschen für Menschen</h1>
+        <h1>Gemeinsam aktiv und kreativ</h1>
         <p>Wer wir sind, wofür wir stehen und wer hinter der Akademie 55plus Kassel steht.</p>
       </div>
     </section>
@@ -74,11 +79,11 @@
       <div class="container two-col">
         <div class="text-col">
           <p class="eyebrow">Über Aka 55</p>
-          <h2>Eine gemeinnützige Einrichtung</h2>
+          <h2>Gemeinsam aktiv</h2>
           <p>
-            Wir sind eine gemeinnützige Einrichtung für Menschen ab 55, die ihr Leben aktiv und
-            sinnvoll gestalten möchten. Gemeinsam lernen wir, teilen Interessen und schaffen neue
-            Erfahrungen. Unser Motto lautet: von Menschen für Menschen.
+            Wir sind eine Gemeinschaft für Menschen ab 55, die ihr Leben aktiv, kreativ und
+            kommunikativ gestalten möchten. Gemeinsam lernen wir, teilen Interessen und
+            schaffen neue Erfahrungen.
           </p>
         </div>
         <div class="image-col">
@@ -111,7 +116,7 @@
           <div class="feature-item">
             <div class="feature-badge">02</div>
             <div class="feature-body">
-              <p>aus eigener Kraft und eigenständig Ideen und Projekte selbstbestimmt verwirklichen</p>
+              <p>aus eigener Kraft und eigenständig Ideen und Projekte verwirklichen</p>
             </div>
           </div>
           <div class="feature-item">
@@ -148,14 +153,13 @@
               den Interessen und Ideen der Mitglieder entwickeln wir gemeinsam ein wechselndes
               Quartalsprogramm.
             </p>
-            <h2>Von Menschen für Menschen</h2>
+            <h2>Gemeinsam aktiv und kreativ</h2>
             <p>
-              Das Motto der Akademie lautet „Von Menschen für Menschen“. Das bedeutet: Menschen ab
-              Lebensalter 55 geben oder besuchen Kurse, die für ihre Interessen und Altersstufe
-              maßgeschneidert sind. Wer Mitglied ist, darf jederzeit mit einem Kursangebot oder
-              Ähnlichem die Vielfalt der Akademie bereichern. Die Themen, Inhalte, Dauer und Häufigkeit
-              der gewählten Kurse bestimmen die Teilnehmenden in Absprache mit der Kursleitung nach
-              Möglichkeit weitgehend selbst.
+              Das bedeutet: Menschen ab Lebensalter 55 geben oder besuchen Kurse, die für ihre
+              Interessen und Altersstufe maßgeschneidert sind. Wer Mitglied ist, darf jederzeit mit
+              einem Kursangebot oder Ähnlichem die Vielfalt der Akademie bereichern. Die Themen,
+              Inhalte, Dauer und Häufigkeit der gewählten Kurse bestimmen die Teilnehmenden in
+              Absprache mit der Kursleitung nach Möglichkeit weitgehend selbst.
             </p>
           </div>
           <div>
@@ -207,6 +211,14 @@
       <div class="footer-brand">
         <p class="logo logo-footer">Akademie 55plus <span>Kassel</span></p>
         <p>Bleiben Sie informiert über neue Kurse und Veranstaltungen.</p>
+        <address class="footer-contact">
+          <a href="https://aka55plus-kassel.de/wer-sind-wir/mitgliedschaft.html">Akademie 55plus Kassel e.V.</a><br>
+          Friedrich-Ebert-Str. 4<br>
+          34117 Kassel<br>
+          Mail: <a href="mailto:buero@aka55plus-kassel.de">buero@aka55plus-kassel.de</a><br>
+          Telefon: 0561-45018560<br>
+          Sprechstunde: jeden 3. Donnerstag, 11–12 Uhr
+        </address>
       </div>
 
       <div class="footer-col">
@@ -214,9 +226,23 @@
         <ul>
           <li><a href="index.html">Startseite</a></li>
           <li><a href="ueber-uns.html">Über uns</a></li>
-          <li><a href="#angebote">Angebote</a></li>
+
+          <li class="has-dropdown">
+            <button class="dropdown-toggle" aria-expanded="false" aria-controls="footer-angebote-menu">
+              Angebote
+              <svg class="chevron" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true">
+                <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <ul class="dropdown-menu" id="footer-angebote-menu">
+              <li><a href="angebote-kurse-workshops.html">Kurse und Workshops</a></li>
+              <li><a href="angebote-kultur-reisen.html">Kultur und Reisen</a></li>
+              <li><a href="angebote-bewegung-freizeit.html">Bewegung und Freizeit</a></li>
+              <li><a href="angebote-austausch-gemeinschaft.html">Austausch und Gemeinschaft</a></li>
+            </ul>
+          </li>
+
           <li><a href="mitglied-werden.html">Mitglied werden</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
       </div>
 
@@ -224,21 +250,8 @@
         <h4>Rechtliches</h4>
         <ul>
           <li><a href="datenschutz.html">Datenschutz</a></li>
-          <li><a href="nutzungsbedingungen.html">Nutzungsbedingungen</a></li>
           <li><a href="impressum.html">Impressum</a></li>
-          <li><a href="faq.html">FAQ</a></li>
           <li><a href="sitemap.html">Sitemap</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Folgen Sie uns</h4>
-        <ul class="social-list">
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">X</a></li>
-          <li><a href="#">LinkedIn</a></li>
-          <li><a href="#">Youtube</a></li>
         </ul>
       </div>
 
