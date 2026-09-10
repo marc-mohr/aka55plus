@@ -7,9 +7,6 @@
   <meta name="description" content="Alle Termine der Akademie 55plus Kassel: Kurse, Ausflüge, Wanderungen und gesellige Treffen im Überblick.">
 
   <!-- Google Font: Source Sans 3 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -20,9 +17,9 @@
 
       <div class="header-brand">
         <a href="index.html" class="logo">Akademie 55plus <span>Kassel</span></a>
-        <div class="logo-placeholder" role="img" aria-label="Platzhalter für Vereinslogo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-        </div>
+        <a href="index.html" class="header-logo-img">
+          <img src="images/logo.png" alt="Logo Akademie 55plus Kassel" width="454" height="197">
+        </a>
       </div>
 
       <!-- Hauptnavigation -->
@@ -47,6 +44,7 @@
           </li>
 
           <li><a href="veranstaltungskalender.html">Veranstaltungskalender</a></li>
+          <li><a href="aktuelles.html">Aktuelles</a></li>
 
           <!-- Erscheint nur im aufgeklappten Mobilmenü (siehe style.css, Media Query 768px) -->
           <li class="nav-cta-mobile">
@@ -77,13 +75,53 @@
 
     <section class="section">
       <div class="container">
-        <div class="notice-box">
-          <strong>Hinweis für die Umsetzung:</strong> Dieser Bereich wird in WordPress später durch das
-          Kalender-Plugin ("The Events Calendar") ersetzt, damit Vorstandsmitglieder Termine selbst
-          eintragen und pflegen können. Unten eine Beispiel-Ansicht, wie die Darstellung aussehen könnte.
+        <div class="section-intro">
+          <p class="eyebrow">Termine</p>
+          <h2>Nächste Termine</h2>
         </div>
 
-        <img src="images/naechste-termine-mockup.jpg" alt="Mockup der geplanten Terminliste 'Nächste Termine' im Design der Webseite" style="max-width: 100%; border-radius: var(--radius); border: 1px solid var(--color-border); display: block; margin: 0 auto;">
+        <div class="termine-liste">
+
+          <div class="termin-item">
+            <div class="termin-datum">
+              <span class="wd">MI</span>
+              <span class="day">16</span>
+              <span class="mon">Sep</span>
+            </div>
+            <div class="termin-info">
+              <p class="termin-titel">Museumsbesuch</p>
+              <p class="termin-meta">10:00 Uhr · Kassel</p>
+            </div>
+            <span class="termin-chip">wiederkehrend, 14-tägig</span>
+          </div>
+
+          <div class="termin-item termin-einzeltermin">
+            <div class="termin-datum termin-datum-akzent">
+              <span class="wd">SA</span>
+              <span class="day">19</span>
+              <span class="mon">Sep</span>
+            </div>
+            <div class="termin-info">
+              <p class="termin-titel">Yoga</p>
+              <p class="termin-meta">09:00 Uhr · Aue</p>
+            </div>
+            <span class="termin-chip termin-chip-akzent">Einzeltermin</span>
+          </div>
+
+          <div class="termin-item">
+            <div class="termin-datum">
+              <span class="wd">DI</span>
+              <span class="day">29</span>
+              <span class="mon">Sep</span>
+            </div>
+            <div class="termin-info">
+              <p class="termin-titel">Wandern</p>
+              <p class="termin-meta">10:00 Uhr · Dörnberg</p>
+            </div>
+            <span class="termin-chip">wiederkehrend, wöchentlich</span>
+          </div>
+
+        </div>
       </div>
     </section>
 
@@ -137,6 +175,7 @@
           </li>
 
           <li><a href="mitglied-werden.html">Mitglied werden</a></li>
+          <li><a href="aktuelles.html">Aktuelles</a></li>
         </ul>
       </div>
 
@@ -144,7 +183,9 @@
         <h4>Rechtliches</h4>
         <ul>
           <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="nutzungsbedingungen.html">Nutzungsbedingungen</a></li>
           <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="faq.html">FAQ</a></li>
           <li><a href="sitemap.html">Sitemap</a></li>
         </ul>
       </div>

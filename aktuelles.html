@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mitglied werden – Akademie 55plus Kassel</title>
-  <meta name="description" content="Werden Sie Mitglied der Akademie 55plus Kassel und nehmen Sie an Kursen, Ausflügen und Treffen teil.">
+  <title>Aktuelles – Akademie 55plus Kassel</title>
+  <meta name="description" content="Berichte unserer Mitglieder über Ausflüge, Wanderungen und Veranstaltungen der Akademie 55plus Kassel.">
 
-  <!-- Google Font: Source Sans 3 -->
+  <!-- Google Font: Source Sans 3 – klare, sehr gut lesbare Groteskschrift, ideal für ältere Leser -->
 
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -67,73 +67,61 @@
 
     <section class="page-hero">
       <div class="container">
-        <p class="eyebrow">Beitritt</p>
-        <h1>Mitglied werden</h1>
-        <p>Werden Sie Teil der Akademie 55plus Kassel – füllen Sie einfach das Formular aus.</p>
+        <p class="eyebrow">Aktuelles</p>
+        <h1>Berichte aus der Gemeinschaft</h1>
+        <p>Was unsere Mitglieder erlebt haben – aus erster Hand berichtet.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="section-intro">
-          <h2>Warum Mitglied werden?</h2>
-        </div>
-        <div class="feature-list">
-          <div class="feature-item">
-            <div class="feature-badge">01</div>
-            <div class="feature-body">
-              <h3>Gemeinschaft erleben und gestalten</h3>
-              <p>Treffen Sie gleichgesinnte Menschen und bauen Sie neue Freundschaften auf.</p>
+        <div class="activity-list">
+
+          <div class="activity-entry">
+            <div class="activity-entry-content">
+              <h3>Ausflug nach Hamburg</h3>
+              <div class="activity-meta">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>07.09.2026</span>
+                <span>von Marc Mohr</span>
+              </div>
+              <p>Immer eine Reise wert&hellip;</p>
+            </div>
+            <div class="activity-entry-image">
+              <picture>
+                <source srcset="images/ausflug-hamburg.webp" type="image/webp">
+                <img src="images/ausflug-hamburg.jpg" alt="Foto: Ausflug nach Hamburg" loading="lazy">
+              </picture>
             </div>
           </div>
-          <div class="feature-item">
-            <div class="feature-badge">02</div>
-            <div class="feature-body">
-              <h3>Volles Programm nutzen</h3>
-              <p>Nehmen Sie an allen Kursen, Ausflügen und Treffen teil – oder bieten Sie selbst etwas an.</p>
+
+          <div class="activity-entry">
+            <div class="activity-entry-content">
+              <h3>Wanderung</h3>
+              <div class="activity-meta">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>07.09.2026</span>
+                <span>von Marc Mohr</span>
+              </div>
+              <p>Unsere schöne Wanderung.</p>
+            </div>
+            <div class="activity-entry-image">
+              <picture>
+                <source srcset="images/fotogruppe-1.webp" type="image/webp">
+                <img src="images/fotogruppe-1.jpg" alt="Foto: Wanderung" loading="lazy">
+              </picture>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <section class="section" style="background: var(--color-surface);">
-      <div class="container">
-        <div class="section-intro">
-          <p class="eyebrow">Formular</p>
-          <h2>Beitrittsformular</h2>
-          <p>
-            Hinweis für die Umsetzung: Dieses Formular ist aktuell ein optisches Muster. In WordPress wird
-            es sp&auml;ter mit einem Formular-Plugin verbunden, das die Anfragen per E-Mail an den Vorstand
-            sendet.
-          </p>
+    <section class="section cta-band">
+      <div class="container cta-inner">
+        <h2>Selbst dabei gewesen?</h2>
+        <p>Vorstandsmitglieder und Beauftragte können eigene Berichte über den WordPress-Adminbereich einstellen.</p>
+        <div class="button-group">
+          <a href="mitglied-werden.html" class="btn btn-primary">Mitglied werden</a>
         </div>
-
-        <form class="form-grid" action="#" method="post">
-          <div class="form-field">
-            <label for="vorname">Vorname</label>
-            <input type="text" id="vorname" name="vorname" required>
-          </div>
-          <div class="form-field">
-            <label for="nachname">Nachname</label>
-            <input type="text" id="nachname" name="nachname" required>
-          </div>
-          <div class="form-field">
-            <label for="email">E-Mail-Adresse</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-field">
-            <label for="telefon">Telefon (optional)</label>
-            <input type="tel" id="telefon" name="telefon">
-          </div>
-          <div class="form-field full-width">
-            <label for="interessen">Woran haben Sie besonderes Interesse?</label>
-            <textarea id="interessen" name="interessen" placeholder="z.B. Wandern, Literaturkreis, Fotografie..."></textarea>
-          </div>
-          <div class="form-field full-width">
-            <button type="submit" class="btn btn-primary">Anfrage senden</button>
-          </div>
-        </form>
       </div>
     </section>
 
