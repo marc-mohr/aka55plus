@@ -825,7 +825,11 @@ summary:focus-visible {
 
 @media (max-width: 480px) {
   .termin-item { flex-wrap: wrap; }
-  .termin-chip { margin-left: 72px; }
+  .termin-chip {
+    flex-basis: 100%;
+    margin-top: 0.75rem;
+    width: fit-content;
+  }
 }
 
 /* ==========================================================
@@ -861,7 +865,11 @@ summary:focus-visible {
   .feature-item { grid-template-columns: 56px 1fr; gap: var(--space-sm); }
   .form-grid { grid-template-columns: 1fr; }
   .activity-entry { flex-direction: column; }
-  .activity-entry-image { width: 100%; }
+  .activity-entry-image {
+    width: 50%;
+    margin: 0 0 var(--space-sm) 0;
+    order: -1; /* Bild erscheint zuerst, dann Überschrift/Meta/Text aus .activity-entry-content */
+  }
   .vorteile-row { grid-template-columns: 1fr !important; }
 
   /* "fixed" ist auf Mobilgeräten unzuverlässig/ruckelig -> normales Scrollen */
